@@ -1,0 +1,78 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Three produces everything.</title>
+
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden; /* ✅ 不要滚动条 */
+        background: #000;
+      }
+
+      #ui {
+        flex: 0 0 auto;
+        padding: 10px 12px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+        color: #fff;
+        font-family: system-ui, -apple-system, "PingFang SC";
+        font-size: 12px;
+      }
+
+      #user-words {
+        height: 28px;
+        padding: 0 10px;
+        border-radius: 10px;
+        border: 1px solid rgba(255,255,255,0.25);
+        background: rgba(255,255,255,0.08);
+        color: #fff;
+        outline: none;
+      }
+
+      button {
+        height: 28px;
+        padding: 0 10px;
+        border-radius: 10px;
+        border: 1px solid rgba(255,255,255,0.25);
+        background: rgba(255,255,255,0.12);
+        color: #fff;
+        cursor: pointer;
+      }
+
+     #basesvg{
+        width: 100%;
+        aspect-ratio: 1 / 1;                 
+        max-height: calc(100vh - 60px);      
+        height: auto;
+        display: block;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="ui">
+      <label for="user-words">Enter what you want to say:</label>
+      <input type="text" id="user-words" name="user-words" />
+      <button id="add-words">Start!</button>
+      <button id="clear-pattern">Clear pattern</button>
+    </div>
+
+    <svg id="basesvg" width="500" height="500"></svg>
+
+    <script src="utils.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
